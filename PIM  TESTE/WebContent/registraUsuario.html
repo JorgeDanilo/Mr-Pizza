@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="css/bootstrap.css" />
+<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
+<script src="http://code.angularjs.org/1.0.1/angular-1.0.1.min.js"></script>
+<script src="js/jquery-1.10.2.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/mascara.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style_teste.css" />
+<title>*****Mr Pizza - Pizzas e Produtos...</title>
+
+<!--adicionando uma imagem de pizza em background-->
+<style type="text/css">
+	body {
+		background-image: url("imagens/pizzawallpapper1.jpg");
+		background-repeat: repeat-x;
+	}
+</style>
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse" id="menu_top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Mr Pizza</a>
+		</div>
+
+		<ul class="nav navbar-nav">
+			<li class="menu_home"><a href="#">Home</a></li>
+			<li class="menu_ajuda"><a href="#">Ajuda</a></li>
+			<li class="entre_contato"><a href="entreContato.html">Entre
+					em contato</a></li>
+		</ul>
+	</div>
+	</nav>
+
+<div class="col-md-3 column margintop20">
+    		<ul class="nav nav-pills nav-stacked">
+  <li class="active"><a href="#"><span class="glyphicon glyphicon-chevron-right"></span> Home</a></li>
+  <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span> Informações</a></li>
+
+</ul>
+</div>
+
+	<div class="container" style="margin-left: 300px;">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-5 well well-md">
+				<label><h3>Cadastro Clientes</h3></label>
+				<form name="form1" action="cadastrarusuario.do" method="post" class="form"
+					role="form">
+					
+					<input class="form-control" name="nome" placeholder="Nome"
+						type="text" required />
+					
+					<br/>
+					<div class="row">
+						<div class="col-xs-6 col-md-6">
+							<input class="form-control" name="login" maxlength="11" placeholder="Login"
+								type="text" required autofocus />
+						</div>
+						
+						<div class="col-xs-6 col-md-6">
+							<input class="form-control" name="senha" placeholder="Senha"
+								type="password" required />
+						</div>
+					</div>
+					
+					<br/>
+					<input class="form-control" name="logradouro"
+						placeholder="Logradouro" type="text" required />
+						
+						
+					<div class="row">
+						<div class="col-xs-6 col-md-6">
+							<input	class="form-control" name="cep" placeholder="Cep" type="cep" onKeyPress="MascaraCep(form1.cep);" maxlength="10" onBlur="ValidaCep(form1.cep)" required />
+						</div>
+						
+						<div class="col-xs-6 col-md-6">
+							 <input class="form-control" name="numero"
+						placeholder="Número" type="text" onKeyPress="mascaraInteiro(form1.numero);" maxlength="5" required />							
+						</div>
+					</div>
+					
+					
+					
+					<div style="margin-left: 355px; margin-top: 10px;">
+						<button class="btn btn-primary" type="submit">Cadastrar</button>
+					</div>	
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+	</form>
+</body>
+</html>

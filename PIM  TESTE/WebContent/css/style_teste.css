@@ -1,0 +1,60 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	margin-right: 0px;
+}
+
+
+.mensagem_login {
+	color: red;
+}
+
+
+p {
+	font-family: helvetica;
+	font-size: 20px;
+	font-weight: bolder;
+	
+}
+
+#formulario {
+	position: absolute;
+	left: 494px;
+	top: 160px;
+}
+
+.menu_home:hover {
+	background-color: #D3D3D3;
+}
+
+.menu_ajuda:hover {
+	background-color: #D3D3D3;
+}
+
+.menu_cardapio:hover {
+	background-color: #D3D3D3;
+}
+
+.entre_contato:hover {
+	background-color: #D3D3D3;
+}
+
+#imagem_pizza {
+	position: relative;
+}
+
+.navbar-text:hover {
+	background-color: #D3D3D3;
+}
+
+.sair:hover {
+	font-family: helvetica;
+	background-color: #D3D3D3;
+}
+
+.row-padding {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+

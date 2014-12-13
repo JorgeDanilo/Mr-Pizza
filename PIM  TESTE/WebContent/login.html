@@ -1,0 +1,156 @@
+<html ng-app>
+<head>
+<title>*****Mr Pizza - Pizzas e Produtos...</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="css/bootstrap.css">
+<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
+<script src="http://code.angularjs.org/1.0.1/angular-1.0.1.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/mascara.js"></script>
+<script src="js/jquery-1.10.2.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style_teste.css">
+
+<!--adicionando uma imagem de pizza em background-->
+<style type="text/css">
+	body {
+		background-image: url("imagens/pizzawallpapper1.jpg");
+		background-repeat: repeat-x;
+	}
+</style>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("a[rel=modal]").click(function(ev) {
+			ev.preventDefault();
+
+			var id = $(this).attr("href");
+
+			var alturaTela = $(document).height();
+			var larguraTela = $(window).width();
+
+			//colocando o fundo preto
+			$('#mascara').css({
+				'width' : larguraTela,
+				'height' : alturaTela
+			});
+			$('#mascara').fadeIn(1000);
+			$('#mascara').fadeTo("slow", 0.8);
+
+			var left = ($(window).width() / 2) - ($(id).width() / 2);
+			var top = ($(window).height() / 2) - ($(id).height() / 2);
+
+			$(id).css({
+				'top' : top,
+				'left' : left
+			});
+			$(id).show();
+		});
+
+		$("#mascara").click(function() {
+			$(this).hide();
+			$(".window").hide();
+		});
+
+		$('.fechar').click(function(ev) {
+			ev.preventDefault();
+			$("#mascara").hide();
+			$(".window").hide();
+		});
+	});
+</script>
+
+<style>
+.window {
+	display: none;
+}
+
+#mascara {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 9000;
+	background-color: #000;
+}
+
+.fechar {
+	display: block;
+	text-align: right;
+}
+</style>
+</head>
+
+<body>
+
+	<form action="usuariocontroller.do" name="form1" method=post>
+
+		<nav class="navbar navbar-inverse" id="menu_top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Mr Pizza</a>
+				</div>
+
+				<ul class="nav navbar-nav">
+					<li class="menu_home"><a href="#">Home</a></li>
+					<li class="menu_ajuda"><a href="#">Ajuda</a></li>					
+					<li class="entre_contato"><a href="#">Entre
+							em contato</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li class="sair"><a href="#janela1" rel="modal">Entrar</a></li>
+				</ul>
+			</div>
+		</nav>
+        
+		<div class="window" id="janela1">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3" id="formulario">
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<p>Mr Pizza - Login Acesso</p>
+							</div>
+							<div class="formulario">
+
+								<fieldset>
+									<legend> </legend>
+
+									<!-- Teste com codigo de controle -->
+									<div class="form-group">
+										<label for="nome">Codigo</label> <input type="text"
+											class="form-control" autofocus="" name="codigo" onKeyPress="mascaraInteiro(form1.numero);" maxlength="11">
+									</div>
+									<!-- finalizacao do teste de controle ^ -->
+
+
+
+
+									<div class="form-group">
+										<label for="nome">Nome</label> <input type="text"
+											class="form-control" autofocus="" name="txtnome" ng-model="nome" maxlength="11">
+									</div>
+
+									<div class="form-group" ng-init="senha=''">
+										<label for="password">Senha</label> <input type="password"
+											class="form-control" id="Senha"  maxlength="11" name="txtsenha" ng-model="senha"></input>
+                                    <p ng-show='senha.length < 3'>Minimo 3 Caracteres</p>    
+									</div>
+								</fieldset>
+
+								<fieldset>
+									<div class="form-group">
+										<button type="submit" class="btn btn-primary" ng-disabled="senha.length < 3">Entrar</button>
+										<a href="testeCadastro.jsp"><button type="button" class="btn btn-warning">Auto-Registrar</button></a>																						
+									</div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
